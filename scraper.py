@@ -18,14 +18,12 @@ for game in week_list:
         loser_data = game.find(class_ = 'loser')
         winner_score = winner_data.find(class_ = 'right')
         loser_score = loser_data.find(class_ = 'right')
-        w = winner_score.contents[0]
-        l = loser_score.contents[0]
-        w = str(w)
-        l = str(l)
-        w = int(w)
-        l = int(l)
+        w = int(str(winner_score.contents[0]))
+        l = int(str(loser_score.contents[0]))
         diff = w - l
-        print(diff)
     # in the event of a tie, the differential is always zero
     else:
-        print(0)
+        diff = 0
+    score_diff.append(diff)
+print(score_diff)
+
